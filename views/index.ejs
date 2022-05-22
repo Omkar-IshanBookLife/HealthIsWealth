@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health is Wealth</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="/"><i class="bi bi-clipboard2-pulse"></i> Health is Wealth</a>
+            <form class="d-flex" role="search" action="/search" method="get">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"  name="query">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+        </div>
+    </nav>
+    <section class="p-5 my-4">
+        <div class="container">
+            <h3>Health is Wealth</h3>
+            <p>Health is important to live life to the fullest. When a person leads a healthy lifestyle, the body remains healthy and the mind is active and fresh. Living a healthy life would extend longevity and also regenerate the body and mind. Having good health is of core importance to human happiness.</p>
+            <hr>
+            <h4>
+                List of the medicines for the diseases which is common for people in differant types
+            </h4>
+            <p><b>The types of medicines which we are going to use for the common diseases are as follows:-</b></p>
+            <ol>
+                <li>Allopathy</li>
+                <li>Homeopathy</li>
+                <li>Ayurvedic</li>
+            </ol>
+            <p><b>The common the disease for the people are as follows:-</b></p>
+            <ol>
+                <li>Fever</li>
+                <li>Cold</li>
+                <li>Diarrhea</li>
+                <li>Headche</li>
+                <li>Stomach Ache</li>
+            </ol>
+            <p><b>Diseases</b></p>
+            <% diseases.forEach((disease, index) => { %>
+                <p><b><%= index+1 %>. <%= disease.name %> </b></p>
+                <p><%= disease.description %> </p>
+                <p><b>Medicines for Fever in different types are:-</b></p>
+                <p>1. Allopathy: <%= disease.allopathy %> </p>
+                <img src="<%= disease.allopathy_img %> " alt="allopathy" class="img-fluid"><br>
+                <p>2. Homeopathy: <%= disease.homoepathy %> </p>
+                <img src="<%= disease.homoepathy_img %> " alt="Homeopathy" class="img-fluid"><br>
+                <p>3. Ayurvedic: <%= disease.ayurvedic %> </p>
+                <img src="<%= disease.ayurvedic_img %> " alt="Homeopathy" class="img-fluid"><br>
+                <hr>
+            <% }) %>
+            
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
